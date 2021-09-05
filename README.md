@@ -3,6 +3,7 @@ Ubuntu 18.04 - Using MFA with Mysql Workbench
 
 For MySQL Workbench TCP/IP over SSH with libpam-google-authenticator enabled - Ubuntu 18.04.
 
+
 Info
 ________________________________________________________________________________
 Google Authenticator can be used with MySQL Workbench, but to achieve this it is necessary to change how SSH and Google Authenticator work together. 
@@ -14,6 +15,7 @@ When MFA using libpam-google-authenticator is enabled on Ubuntu18.04 user login 
 Because Mysql Workbench only prompts once for SSH credentials the above sequence will not work, thus any attempt to login via Workbench will fail. This can be fixed by having the user enter their password and pin back to back on a single line like this:
 
 [password][two-factor-pin] 
+
 
 
 Setup
