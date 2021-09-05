@@ -43,7 +43,7 @@ auth required pam_google_authenticator.so nullok forward_pass
 
 Comment out line  
 @include common-auth  
-As We want to use mfa-auth to authenticate SSH connections now instead of common-auth.  
+As we want to use mfa-auth to authenticate SSH connections now instead of common-auth.  
   
   
 ________________________________________________________________________________
