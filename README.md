@@ -20,7 +20,7 @@ ________________________________________________________________________________
 Install Google Authenticator  
 sudo apt-get install libpam-google-authenticator  
   
-  
+________________________________________________________________________________  
 Create a custom PAM config file called “mfa-auth” using common-auth as a base  
 sudo cp /etc/pam.d/common-auth /etc/pam.d/mfa-auth  
 sudo nano /etc/pam.d/mfa-auth  
@@ -33,7 +33,7 @@ The try_first_pass option: “Before prompting the user for their password, the 
 linux.die.net/man/8/pam_unix
 
 
-
+________________________________________________________________________________
 Edit /etc/pam.d/sshd and add Google Authenticator  
 sudo nano /etc/pam.d/sshd  
 
@@ -46,6 +46,7 @@ Comment out line
 As We want to use mfa-auth to authenticate SSH connections now instead of common-auth.  
   
   
+________________________________________________________________________________
 Edit /etc/ssh/sshd_config to ensure SSH is using is using two-factor authentication  
 sudo nano /etc/ssh/sshd_config  
   
@@ -54,10 +55,12 @@ ChallengeResponseAuthentication yes
   
   
   
+________________________________________________________________________________
 Restart SSH  
 sudo systemctl restart ssh  
 
   
+________________________________________________________________________________
 Set up Google Authenticator pin for each user with your desired settings  
 sudo su username  
 google-authenticator 
